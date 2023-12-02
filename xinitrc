@@ -10,10 +10,9 @@ fi
 # preferences
 xrdb -merge $HOME/.Xresources
 xset r rate 200 30
-setxkbmap -layout us,is -option grp:shift_caps_toggle
 
 # notification daemon
-{ sleep 2; runst; } &
+{ sleep 2; dunst; } &
 
 # window manager
 exec i3

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+leds=$(xset -q | grep LED | awk '{ print $10 }')
+
+printf "<span color=\"#bd93f9\"> </span>"
+
+case $leds in
+	"00000000")
+		echo "us";;
+	"00001000")
+		echo "es";;
+	*)
+		echo "unknown layout" $leds;;
+esac

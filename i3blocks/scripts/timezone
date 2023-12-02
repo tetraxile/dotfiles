@@ -1,0 +1,19 @@
+#!/bin/sh
+
+TIMEZONES=("US/Pacific" "US/Mountain" "US/Central" "US/Eastern" "Europe/Berlin" "Asia/Tokyo" "Australia/Melbourne");
+
+idx=$(awk 'NR==1{ print; exit }' ~/.config/i3blocks/vars)
+
+printf "<span color=\"#f1fa8c\"> </span>"
+
+if [[ $button -eq 1 ]]; then
+	idx=$(($idx+1))
+	[[ $idx -eq ${#TIMEZONES[@]} ]] && idx=0
+	sed -i "1s/.*/$idx/" ~/.config/i3blocks/vars
+elif [[ $button -eq 3 ]]; then
+	idx=$(($idx-1))
+	[[ $idx -eq -1 ]] && idx=$((${#TIMEZONES[@]} - 1))
+	sed -i "1s/.*/$idx/" ~/.config/i3blocks/vars
+fi
+
+TZ=":${TIMEZONES[$idx]}" date '+%I : %M %Z %:::z' | awk '{ printf "%s<span color=\"#f1fa8c\">%s</span>%s<span color=\"#f1fa8c\"> %s</span> (UTC%s)\n", $1, $2, $3, $4, $5 }'

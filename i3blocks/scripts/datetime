@@ -1,0 +1,17 @@
+#!/bin/sh
+
+idx=$(awk 'NR==2{ print; exit }' ~/.config/i3blocks/vars)
+
+printf "<span color=\"#f1fa8c\"> </span>"
+
+if [[ $button -eq 1 ]]; then
+	idx=$(($idx+1))
+	[[ $idx -eq 2 ]] && idx=0
+	sed -i "2s/.*/$idx/" ~/.config/i3blocks/vars
+fi
+
+if [[ $idx -eq 0 ]]; then
+	date '+%Y-%m-%d %H:%M:%S <span color="#f1fa8c">%Z</span>'
+elif [[ $idx -eq 1 ]]; then
+	date '+%s'
+fi
