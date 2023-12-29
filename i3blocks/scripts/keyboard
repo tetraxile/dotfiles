@@ -8,7 +8,7 @@ case $leds in
 	"00000000")
 		echo "us";;
 	"00001000")
-		echo "es";;
+		echo "pt";;
 	*)
 		echo "unknown layout" $leds;;
 esac

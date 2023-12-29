@@ -9,7 +9,7 @@ font pango: JetBrainsMono NF 8
 # switch keyboard layouts
 set $refresh_keyboard pkill -RTMIN+1 i3blocks
 bindsym Shift+Caps_Lock exec --no-startup-id pkill -RTMIN+1 i3blocks
-exec_always --no-startup-id setxkbmap -layout us,es -option grp:shift_caps_toggle
+exec_always --no-startup-id setxkbmap -layout us,pt -option grp:shift_caps_toggle
 
 # use pactl to adjust volume in PulseAudio
 set $refresh_volume pkill -RTMIN+2 i3blocks
