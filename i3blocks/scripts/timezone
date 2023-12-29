@@ -16,4 +16,4 @@ elif [[ $button -eq 3 ]]; then
 	sed -i "1s/.*/$idx/" ~/.config/i3blocks/vars
 fi
 
-TZ=":${TIMEZONES[$idx]}" date '+%I : %M %Z %:::z' | awk '{ printf "%s<span color=\"#f1fa8c\">%s</span>%s<span color=\"#f1fa8c\"> %s</span> (UTC%s)\n", $1, $2, $3, $4, $5 }'
+TZ=":${TIMEZONES[$idx]}" date '+%H : %M %Z %:::z' | awk '{ printf "%s<span color=\"#f1fa8c\">%s</span>%s<span color=\"#f1fa8c\"> %s</span> (UTC%s)\n", $1, $2, $3, $4, $5 }'
