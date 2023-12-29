@@ -30,6 +30,7 @@ export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 
 alias ls="ls --color=auto"
+alias cal="cal -m"
 alias gdb-switch="gdb-multiarch -ex \"target extended-remote $SWITCH_IP:22225\" -ex \"monitor wait application\""
 alias neofetch="neofetch --ascii $HOME/.config/neofetch/trans_arch.txt --ascii_colors 75 212 231"
 
