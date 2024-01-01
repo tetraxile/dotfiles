@@ -11,7 +11,7 @@ if [[ $button -eq 1 ]]; then
 fi
 
 if [[ $idx -eq 0 ]]; then
-	date '+%Y-%m-%d %H:%M:%S <span color="#f1fa8c">%Z</span>'
+	date '+%a %F %T <span color="#f1fa8c">%Z</span>'
 elif [[ $idx -eq 1 ]]; then
 	date '+%s'
 fi
