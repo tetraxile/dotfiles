@@ -16,7 +16,7 @@ zstyle ':completion:*' rehash true
 
 autoload -Uz compinit && compinit
 
-export PROMPT="%2~ %# "
+export PROMPT="%B%2~%b %# "
 
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
