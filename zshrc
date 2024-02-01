@@ -18,8 +18,6 @@ autoload -Uz compinit && compinit
 
 export PROMPT="%B%2~%b %# "
 
-export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
 export GPG_TTY=$(tty)
 export TERMINAL=kitty
 export EDITOR=nvim
@@ -45,5 +43,3 @@ alias ua-update-mirrors='export TMPFILE="$(mktemp)"; \
 alias ua-update-all='ua-update-mirrors \
 	&& ua-drop-caches \
 	&& sudo pacman -Syu'
-
-export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
