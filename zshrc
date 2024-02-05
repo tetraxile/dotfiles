@@ -32,6 +32,7 @@ alias cal="cal -m"
 alias feh="feh --force-aliasing --keep-zoom-vp"
 alias gdb-switch="gdb-multiarch -ex \"target extended-remote $SWITCH_IP:22225\" -ex \"monitor wait application\""
 alias neofetch="neofetch --ascii $HOME/.config/neofetch/trans_arch.txt --ascii_colors 75 212 231"
+alias rc="radix-calc"
 
 alias ua-drop-caches='sudo paccache -rk3'
 alias ua-update-mirrors='export TMPFILE="$(mktemp)"; \
