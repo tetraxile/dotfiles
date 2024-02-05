@@ -27,8 +27,5 @@ signal=3
 [battery]
 interval=2
 
-[timezone]
-interval=5
-
 [datetime]
 interval=1
