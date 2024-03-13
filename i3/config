@@ -36,6 +36,9 @@ bindsym $mod+p exec --no-startup-id passmenu
 # start dmenu
 bindsym $mod+d exec --no-startup-id dmenu_run
 
+# start browser
+bindsym $mod+q exec mullvad-browser
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
