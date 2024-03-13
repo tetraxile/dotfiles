@@ -7,7 +7,7 @@ if [[ $? -ne 0 ]]; then
 	exit 33;
 fi
 
-_down=$(echo "$_output" | cut -f2 | numfmt --to=iec-i --suffix=B --format="%9.2f")
-_up=$(echo "$_output" | cut -f3 | numfmt --to=iec-i --suffix=B --format="%9.2f")
+_rx=$(echo "$_output" | cut -f2 | numfmt --to=iec-i --suffix=B --format="%9.2f")
+_tx=$(echo "$_output" | cut -f3 | numfmt --to=iec-i --suffix=B --format="%9.2f")
 
-printf " %s  %s\n" $_down $_up
+printf " %s  %s\n" $_rx $_tx
