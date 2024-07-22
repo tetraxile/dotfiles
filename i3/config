@@ -1,0 +1,161 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+
+# use mouse+$mod to drag floating containers
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+# font for window titles
+font pango:monospace 8
+
+# start terminal
+bindsym $mod+Return exec kitty
+
+# start terminal in the same directory as the focused container
+bindsym $mod+Shift+Return exec kitty $(xcwd)
+
+# start clipmenu
+bindsym $mod+z exec --no-startup-id clipmenu
+
+# start passmenu
+bindsym $mod+p exec --no-startup-id passmenu
+
+# start dmenu
+bindsym $mod+d exec --no-startup-id dmenu_run
+
+# start browser
+bindsym $mod+q exec firefox
+
+# take screenshot and copy to clipboard
+bindsym $mod+c exec escrotum -sC
+
+# take screenshot and save to file
+# bindsym $mod+Alt+c exec escrotum -s "$HOME/Pictures/screenshot-%Y%m%d-%H%M%S.png"
+
+# kill focused container
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+
+# move focused container
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+
+# split horizontally
+bindsym $mod+h split h
+
+# split vertically
+bindsym $mod+v split v
+
+# enter fullscreen for focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating containers
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+g focus child
+
+# move current container to the next monitor
+bindsym $mod+x move workspace to output next
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves layout/session, can be used to upgrade it)
+bindsym $mod+Shift+r restart
+
+# switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+
+# use wpctl to adjust volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@   5%+ --limit 1.0 && pkill -RTMIN+2 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@   5%- --limit 1.0 && pkill -RTMIN+2 i3blocks
+bindsym XF86AudioMute        exec --no-startup-id wpctl set-mute   @DEFAULT_AUDIO_SINK@   toggle          && pkill -RTMIN+2 i3blocks
+bindsym XF86AudioMicMute     exec --no-startup-id wpctl set-mute   @DEFAULT_AUDIO_SOURCE@ toggle          && pkill -RTMIN+2 i3blocks
+
+# use brightnessctl to adjust brightness
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl s 5%+ && pkill -RTMIN+3 i3blocks
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%- && pkill -RTMIN+3 i3blocks
+
+# change modes
+set $mode_system "loc[k], [l]ogout, [s]uspend, [r]eboot, [S]hutdown"
+bindsym $mod+r mode resize
+bindsym $mod+Escape mode $mode_system
+
+# resize window
+mode "resize" {
+        bindsym Up    resize shrink height 1 px
+        bindsym Down  resize grow   height 1 px
+        bindsym Left  resize shrink width  1 px
+        bindsym Right resize grow   width  1 px
+
+        bindsym Control+Up    resize shrink height 10 px
+        bindsym Control+Down  resize grow   height 10 px
+        bindsym Control+Left  resize shrink width  10 px
+        bindsym Control+Right resize grow   width  10 px
+
+        bindsym Escape mode "default"
+}
+
+mode $mode_system {
+	bindsym k       exec --no-startup-id xset s activate,                      mode "default"
+	bindsym l       exec --no-startup-id i3-msg exit,                          mode "default"
+	bindsym s       exec --no-startup-id xset s activate && systemctl suspend, mode "default"
+	bindsym r       exec --no-startup-id reboot,                               mode "default"
+	bindsym Shift+s exec --no-startup-id shutdown now,                         mode "default"
+	bindsym Escape  mode "default"
+}
+
+# startup programs
+exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
+
+for_window [title="^editor$"] floating enable
+for_window [title="^OpenGL$"] floating enable
+
+for_window [floating] move position center
+
+bar {
+	font pango:monospace 10
+	position bottom
+        status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
+}

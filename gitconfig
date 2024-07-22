@@ -1,0 +1,16 @@
+[user]
+	email = tetraxile@proton.me
+	name = tetraxile
+	signingKey = AB1243FD5015BF6A
+[credential]
+	helper = cache
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
+[url "https://"]
+	insteadOf = "git://"
+[init]
+	defaultBranch = main
+[http]
+	sslVerify = false
