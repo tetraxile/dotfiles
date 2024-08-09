@@ -17,7 +17,7 @@ autoload -Uz promptinit && promptinit
 zstyle :compinstall filename "$HOME/.zshrc"
 zstyle ':completion:*' rehash true
 
-export PROMPT="%B%2~%b %# ";
+export PROMPT="%B%2~%b %(?..[%F{red}%?%f] )%# ";
  
 alias ls="ls --color=auto"
 alias cal="cal -m"
