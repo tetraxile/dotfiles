@@ -9,6 +9,7 @@ ln -sf $(readlink -f xserverrc) ~/.xserverrc
 ln -sf $(readlink -f i3) ~/.config/
 ln -sf $(readlink -f i3blocks) ~/.config/
 ln -sf $(readlink -f nvim) ~/.config/
+ln -sf $(readlink -f gdbinit) ~/.gdbinit
 
 mkdir -p ~/.config/fontconfig/conf.d
 ln -sf $(readlink -f fontconfig/fonts.conf) ~/.config/fontconfig/
