@@ -114,12 +114,17 @@ require('lazy').setup({
   },
 
   -- color scheme
+  -- {
+  --   'navarasu/onedark.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'onedark'
+  --   end,
+  -- },
   {
-    'navarasu/onedark.nvim',
+    'catppuccin/nvim',
+    name = 'catppuccin',
     priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
   },
 
   -- status line
@@ -127,8 +132,8 @@ require('lazy').setup({
     'nvim-lualine/lualine.nvim',
     opts = {
       options = {
-        icons_enabled = false,
-        theme = 'onedark',
+        -- icons_enabled = false,
+        theme = 'moonfly',
         component_separators = '|',
         section_separators = '',
       },
@@ -313,6 +318,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 
 ----------------------- PLUGIN SETUP -----------------------
+
+require("catppuccin").setup({
+    flavour = "auto", -- latte, frappe, macchiato, mocha
+})
+vim.cmd.colorscheme 'catppuccin'
 
 require('telescope').setup {
   defaults = {
