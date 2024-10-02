@@ -152,6 +152,7 @@ exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 
 for_window [title="^editor$"] floating enable
 for_window [title="^OpenGL$"] floating enable
+for_window [class="^ninjabrainbot-Main$"] floating enable
 
 for_window [floating] move position center
 
