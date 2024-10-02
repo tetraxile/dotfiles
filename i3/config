@@ -3,6 +3,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 # use mouse+$mod to drag floating containers
 floating_modifier $mod
@@ -30,10 +31,10 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+q exec firefox
 
 # take screenshot and copy to clipboard
-bindsym $mod+c exec escrotum -sC
+bindsym --release $mod+c exec scrot -s - | xclip -selection clipboard -target image/png
 
 # take screenshot and save to file
-# bindsym $mod+Alt+c exec escrotum -s "$HOME/Pictures/screenshot-%Y%m%d-%H%M%S.png"
+bindsym --release $mod+$alt+c exec scrot "$HOME/Pictures/screenshot-%Y%m%d-%H%M%S.png"
 
 # kill focused container
 bindsym $mod+Shift+q kill
