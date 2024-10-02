@@ -1,0 +1,54 @@
+! set TERM environment variable
+*.termName: xterm-256color
+
+! color scheme
+*.vt100.foreground: rgb:ff/ff/ff
+*.vt100.background: rgb:00/00/00
+! black
+*.vt100.color0: rgb:00/00/00
+*.vt100.color8: rgb:76/76/76
+! red
+*.vt100.color1: rgb:cc/04/03
+*.vt100.color9: rgb:f2/20/1f
+! green
+*.vt100.color2: rgb:19/cb/00
+*.vt100.color10: rgb:23/fd/00
+! yellow
+*.vt100.color3: rgb:ce/cb/00
+*.vt100.color11: rgb:ff/fd/00
+! blue
+*.vt100.color4: rgb:0d/73/cc
+*.vt100.color12: rgb:1a/8f/ff
+! magenta
+*.vt100.color5: rgb:cb/1e/d1
+*.vt100.color13: rgb:fd/28/ff
+! cyan
+*.vt100.color6: rgb:0d/cd/cd
+*.vt100.color14: rgb:14/ff/ff
+! white
+*.vt100.color7: rgb:dd/dd/dd
+*.vt100.color15: rgb:ff/ff/ff
+
+! force utf-8
+! *.vt100.locale: false
+! *.vt100.utf8: true
+
+! change number of saved lines for scrolling
+*.vt100.saveLines: 4096
+
+! enable scrollbar
+! *.vt100.scrollBar: true
+*.vt100.scrollBar.width: 4
+*.vt100.rightScrollBar: true
+
+! fix backspace key sending ^H
+*.vt100.backarrowKey: false
+*.ttyMode: erase ^?
+
+! set custom keybinds
+*.vt100.translations: #override \n\
+	Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+	Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+
+! set font
+*.vt100.faceName: JetBrainsMonoNL NF Bold:size=11:antialias=true

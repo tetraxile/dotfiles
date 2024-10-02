@@ -43,11 +43,12 @@ require('lazy').setup({
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
+        add          = { text = '+' },
+        change       = { text = '~' },
+        delete       = { text = '_' },
+        topdelete    = { text = '‾' },
         changedelete = { text = '~' },
+        untracked    = { text = '║' },
       },
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
@@ -78,7 +79,7 @@ require('lazy').setup({
           end)
           return '<Ignore>'
         end, { expr = true, desc = 'Jump to previous hunk' })
- 
+
         -- actions
         -- visual mode
         map('v', '<leader>hs', function()
@@ -284,6 +285,9 @@ vim.o.timeoutlen = 300
 
 -- enable 24-bit color
 vim.o.termguicolors = true
+
+-- remove tildes after end of buffer
+vim.opt.fillchars = { eob = ' ' }
 
 
 ------------------------- KEYMAPS --------------------------

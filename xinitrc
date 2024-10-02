@@ -15,6 +15,8 @@ for id in $(xinput list --id-only "Logitech G502 HERO Gaming Mouse"); do
 	xinput set-prop $id "libinput Accel Speed" -0.5
 done
 
+xrdb ~/.Xresources
+
 fcitx5 &
 dunst &
 exec i3
