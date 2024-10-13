@@ -30,6 +30,9 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # start browser
 bindsym $mod+q exec firefox
 
+# switch input method
+bindsym $mod+Tab exec --no-startup-id fcitx5-remote -t
+
 # take screenshot and copy to clipboard
 bindsym --release $mod+c exec scrot -s - | xclip -selection clipboard -target image/png
 
