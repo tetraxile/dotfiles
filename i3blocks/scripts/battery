@@ -1,10 +1,18 @@
 #!/bin/sh
 
-BAT=$(acpi -b | grep -E -o '[0-9][0-9]?[0-9]?%')
+BAT_PATH=/sys/class/power_supply/BAT0
 
-if acpi -b | grep -q "Charging"; then
+STATUS=$(cat $BAT_PATH/status)
+CHARGE_NOW=$(cat $BAT_PATH/charge_now)
+CHARGE_FULL=$(cat $BAT_PATH/charge_full)
+BAT=$(( CHARGE_NOW * 100 / CHARGE_FULL ))%
+
+if [ "$STATUS" = "Charging" ]; then
 	echo "<span size=\"large\">󰂄</span> $BAT"
 	exit 0
+elif [ "$STATUS" != "Discharging" ] && [ "$STATUS" != "Not charging" ]; then
+	echo "BAT ERROR: $STATUS"
+	exit 33
 elif [ ${BAT%?} -le 30 ]; then
 	icon="󰁼"
 elif [ ${BAT%?} -le 60 ]; then
