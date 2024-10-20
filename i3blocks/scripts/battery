@@ -10,6 +10,8 @@ BAT=$(( CHARGE_NOW * 100 / CHARGE_FULL ))%
 if [ "$STATUS" = "Charging" ]; then
 	echo "<span size=\"large\">󰂄</span> $BAT"
 	exit 0
+elif [ "$STATUS" = "Full" ]; then
+	echo "<span size=\"large\">󰁹</span> 100%"
 elif [ "$STATUS" != "Discharging" ] && [ "$STATUS" != "Not charging" ]; then
 	echo "BAT ERROR: $STATUS"
 	exit 33
