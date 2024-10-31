@@ -9,8 +9,8 @@ local on_attach = function(_, bufnr)
 	map("n", "gy", vim.lsp.buf.type_definition, "[G]oto T[y]pe definition", opts)
 	map("n", "gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration", opts)
 	map("n", "K", vim.lsp.buf.hover, "Hover", opts)
-	map("n", "gK", vim.lsp.buf.signature_help, "Signature Help", opts)
-	map("i", "<c-k>", vim.lsp.buf.signature_help, "Signature Help", opts)
+	-- map("n", "gK", vim.lsp.buf.signature_help, "Signature Help", opts)
+	-- map("i", "<c-k>", vim.lsp.buf.signature_help, "Signature Help", opts)
 	map({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", opts)
 	map("n", "<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame", opts)
 end
@@ -22,7 +22,7 @@ return {
 		-- show LSP status on open
 		{ "j-hui/fidget.nvim", opts = {} },
 		-- display function signatures
-		{ "ray-x/lsp_signature.nvim", opts = {} },
+		-- { "ray-x/lsp_signature.nvim", opts = {} },
 	},
 	config = function()
 		local nvim_lsp = require("lspconfig")
