@@ -10,6 +10,7 @@ opt.ignorecase = true          -- case-insensitive searching...
 opt.smartcase = true           -- ...unless \C or capital letter in search
 opt.termguicolors = true       -- enable 24-bit colour
 opt.fillchars = { eob = ' ' }  -- remove tildes after end of buffer
+opt.formatoptions:append('/')  -- don't continue comments after statements on newline
 -- opt.updatetime = 250
 -- opt.timeoutlen = 300
 
