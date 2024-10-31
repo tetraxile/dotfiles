@@ -17,4 +17,5 @@
   "vim-alternate": { "branch": "master", "commit": "b3b7d5e9982f228a4d62fbbe2f2fe3e3ae92768c" },
   "vim-sleuth": { "branch": "master", "commit": "be69bff86754b1aa5adcbb527d7fcd1635a84080" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
+  "vimtex": { "branch": "master", "commit": "0785fd98af20f308ce6856f75a70a4ece9abab29" }
 }
