@@ -17,19 +17,20 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 -- set up lazy, load plugins
-require("lazy").setup({
-	import = "plugins",
+require("lazy").setup({{ import = "plugins" }}, {
 	checker = { enabled = false },
 	performance = {
 		rtp = {
-			"gzip",
-			"matchit",
-			"matchparen",
-			"netrwPlugin",
-			"tarPlugin",
-			"tohtml",
-			"tutor",
-			"zipPlugin",
+			disabled_plugins = {
+				"gzip",
+				"matchit",
+				"matchparen",
+				-- "netrwPlugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
 		},
 	},
 })
