@@ -28,7 +28,7 @@ bindsym $mod+p exec --no-startup-id passmenu
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # start browser
-bindsym $mod+q exec firefox
+bindsym $mod+q exec floorp
 
 # switch input method
 bindsym $mod+Tab exec --no-startup-id fcitx5-remote -t
