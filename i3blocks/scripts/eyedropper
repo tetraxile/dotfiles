@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ -z $button ] ; then
+	_output=$(colorpicker --one-shot)
+	_r=$(echo $_output | cut -d' ' -f2 | rev | cut -c2- | rev)
+	_g=$(echo $_output | cut -d' ' -f4 | rev | cut -c2- | rev)
+	_b=$(echo $_output | cut -d' ' -f6)
+	_hex=$(echo $_output | cut -d' ' -f9)
+	_y=$(( ($_r + $_r + $_b + $_g + $_g + $_g) / 6 ))
+	echo 󰈊 $_r, $_g, $_b
+	echo 󰈊 $_r, $_g, $_b
+	if (( $_y > 128 )) ; then
+		echo "#000000"
+	else
+		echo "#FFFFFF"
+	fi
+	echo $_hex
+fi

@@ -2,6 +2,12 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# $mod keys not in use
+# `                   0 - =
+#           t y u   o   [ ]
+# C             j k l ; ' #
+#   \         b n m , . /
+
 set $mod Mod4
 set $alt Mod1
 
@@ -29,6 +35,9 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 
 # start browser
 bindsym $mod+q exec floorp
+
+# start eyedropper
+bindsym $mod+i exec --no-startup-id pkill -RTMIN+4 i3blocks
 
 # switch input method
 bindsym $mod+Tab exec --no-startup-id fcitx5-remote -t
@@ -162,5 +171,6 @@ for_window [floating] move position center
 bar {
 	font pango:monospace 10
 	position bottom
+        separator_symbol " "
         status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
 }
