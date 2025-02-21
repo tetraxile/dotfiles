@@ -18,6 +18,9 @@ end
 
 return {
 	"neovim/nvim-lspconfig",
+	opts = {
+		autoformat = false
+	},
 	dependencies = {
 		-- show LSP status on open
 		{ "j-hui/fidget.nvim", opts = {} },
