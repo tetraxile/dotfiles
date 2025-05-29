@@ -1,5 +1,15 @@
 #!/bin/sh
 
+BUTTON_LEFT=1
+BUTTON_MIDDLE=2
+BUTTON_RIGHT=3
+
+if [[ $button -eq $BUTTON_RIGHT ]]; then
+	wpctl set-volume @DEFAULT_AUDIO_SINK@   5%+ --limit 1.0 && pkill -RTMIN+2 i3blocks
+elif [[ $button -eq $BUTTON_LEFT ]]; then
+	wpctl set-volume @DEFAULT_AUDIO_SINK@   5%- --limit 1.0 && pkill -RTMIN+2 i3blocks
+fi
+
 output=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -b 9,11-)
 VOL=$((10#$(echo "$output" | cut -b -3)))
 

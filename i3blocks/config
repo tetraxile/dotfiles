@@ -9,11 +9,6 @@ markup=pango
 [eyedropper]
 signal=4
 
-[streak]
-command=head -n 1 ~/.streak-last | time-since
-interval=60
-label=<span color="#f1fa8c"> </span>
-
 [vpn]
 interval=5
 

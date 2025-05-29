@@ -6,7 +6,13 @@
 # `                   0 - =
 #           t y u   o   [ ]
 # C             j k l ; ' #
-#   \         b n m , . /
+#   \           n m , . /
+
+# $mod+Shift keys not in use
+# `                   0 - =
+# T   w e   t y u i o   [ ]
+# C a s d f g h j k l ; ' #
+#   \   x   v b n m , . /
 
 set $mod Mod4
 set $alt Mod1
@@ -39,14 +45,19 @@ bindsym $mod+q exec floorp
 # start eyedropper
 bindsym $mod+i exec --no-startup-id pkill -RTMIN+4 i3blocks
 
+# start zoomer
+bindsym $mod+Shift+z exec --no-startup-id boomer
+
 # switch input method
 bindsym $mod+Tab exec --no-startup-id fcitx5-remote -t
 
 # take screenshot and copy to clipboard
-bindsym --release $mod+c exec scrot -s - | xclip -selection clipboard -target image/png
+bindsym --release $mod+c exec --no-startup-id scrot -s - | xclip -selection clipboard -target image/png
 
 # take screenshot and save to file
-bindsym --release $mod+$alt+c exec scrot "$HOME/Pictures/screenshot-%Y%m%d-%H%M%S.png"
+bindsym --release $mod+$alt+c exec --no-startup-id scrot "$HOME/Pictures/screenshot-%Y%m%d-%H%M%S.png"
+
+bindsym $mod+Shift+p exec --no-startup-id xrandr --output HDMI-2 --left-of eDP-1
 
 # kill focused container
 bindsym $mod+Shift+q kill
@@ -165,6 +176,7 @@ exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 for_window [title="^editor$"] floating enable
 for_window [title="^OpenGL$"] floating enable
 for_window [class="^ninjabrainbot-Main$"] floating enable
+for_window [class="^smo-level-editor$"] floating enable
 
 for_window [floating] move position center
 
