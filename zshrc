@@ -17,7 +17,11 @@ autoload -Uz promptinit && promptinit
 zstyle :compinstall filename "$HOME/.zshrc"
 zstyle ':completion:*' rehash true
 
-export PROMPT="%B%2~%b %(?..[%F{red}%?%f] )%# ";
+if [[ -z "$SSH_CLIENT" ]]; then
+	export PROMPT="%B%2~%b %(?..[%F{red}%?%f] )%# ";
+else
+	export PROMPT="%B%n@%M:%2~%b %(?..[%F{red}%?%f] )%# ";
+fi
  
 alias ls="ls --color=auto"
 alias cal="cal -m"
