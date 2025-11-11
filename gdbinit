@@ -1,4 +1,4 @@
-define my_bt
+define nxbt
   set $frame = $fp
   set $prev_frame = 0
   while $frame != 0 && $prev_frame != $frame
