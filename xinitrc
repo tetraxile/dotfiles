@@ -19,4 +19,5 @@ xrdb ~/.Xresources
 
 fcitx5 &
 dunst &
+picom -b
 exec i3
