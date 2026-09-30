@@ -7,3 +7,5 @@ define nxbt
       set $frame = ((unsigned long long *)$frame)[0]
   end
 end
+
+set disassembly-flavor intel

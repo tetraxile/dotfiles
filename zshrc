@@ -1,6 +1,6 @@
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=100000
+SAVEHIST=100000
 
 unsetopt beep
 bindkey -e
@@ -29,3 +29,7 @@ alias feh="feh --force-aliasing --keep-zoom-vp"
 alias neofetch="hyfetch"
 alias rc="radix-calc"
 alias watch-sync="watch -d grep -e Dirty: -e Writeback: /proc/meminfo"
+alias gdb-switch="gdb -ex \"set architecture aarch64\" -ex \"set gnutarget elf64-littleaarch64\" -ex \"target extended-remote switch:22225\""
+
+eval "$(starship init zsh)"
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

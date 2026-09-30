@@ -20,6 +20,7 @@ set $alt Mod1
 # use mouse+$mod to drag floating containers
 floating_modifier $mod
 tiling_drag modifier titlebar
+workspace_layout tabbed
 
 # font for window titles
 font pango:monospace 8
@@ -40,7 +41,7 @@ bindsym $mod+p exec --no-startup-id passmenu
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # start browser
-bindsym $mod+q exec floorp
+bindsym $mod+q exec zen-browser
 
 # start eyedropper
 bindsym $mod+i exec --no-startup-id pkill -RTMIN+4 i3blocks

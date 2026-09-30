@@ -4,7 +4,7 @@ BUTTON_LEFT=1
 BUTTON_MIDDLE=2
 BUTTON_RIGHT=3
 
-TIMEZONES=("US/Pacific" "US/Mountain" "US/Central" "US/Eastern" "Europe/Berlin" "Asia/Tokyo" "Australia/Melbourne");
+TIMEZONES=("US/Pacific" "US/Mountain" "America/Regina" "US/Eastern" "Europe/Berlin" "Asia/Tokyo" "Australia/Melbourne");
 
 idx=$(awk 'NR==2{ print; exit }' ~/.config/i3blocks/vars)
 
