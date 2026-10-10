@@ -1,7 +1,7 @@
 #!/bin/sh
 
-mkdir ~/.config
-mkdir ~/.local/bin
+mkdir -p ~/.config
+mkdir -p ~/.local/bin
 
 ln -sf $(readlink -f gpg-agent.conf) ~/.gnupg/gpg-agent.conf
 ln -sf $(readlink -f gitconfig) ~/.gitconfig
