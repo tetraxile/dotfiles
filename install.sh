@@ -1,5 +1,8 @@
 #!/bin/sh
 
+mkdir ~/.config
+mkdir ~/.local/bin
+
 ln -sf $(readlink -f gpg-agent.conf) ~/.gnupg/gpg-agent.conf
 ln -sf $(readlink -f gitconfig) ~/.gitconfig
 ln -sf $(readlink -f zshrc) ~/.zshrc
@@ -12,6 +15,8 @@ ln -sf $(readlink -f nvim) ~/.config/
 ln -sf $(readlink -f gdbinit) ~/.gdbinit
 ln -sf $(readlink -f Xresources) ~/.Xresources
 ln -sf $(readlink -f dunst) ~/.config/
+ln -sf $(readlink -f scripts/find-sym) ~/.local/bin/
+ln -sf $(readlink -f scripts/flac-to-opus) ~/.local/bin/
 
 mkdir -p ~/.config/fontconfig/conf.d
 ln -sf $(readlink -f fontconfig/fonts.conf) ~/.config/fontconfig/

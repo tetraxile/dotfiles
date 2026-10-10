@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+	echo "no symbol provided"
+	exit 1
+fi
+
+if [ ! -d "build/CMakeFiles" ]; then
+	echo "directory \`build/CMakeFiles\` can't be found"
+	exit 1
+fi
+
+find build/CMakeFiles -name "*.obj" -exec llvm-objdump -t {} \; | grep "$1"
