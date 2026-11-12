@@ -1,10 +1,9 @@
-#!/bin/sh
+#!/bin/zsh
 
 _output=$(sudo wg show wg0-mullvad transfer 2>/dev/null);
 
 if [[ $? -ne 0 ]]; then
-	echo "no vpn";
-	exit 33;
+	echo "n/a"
 fi
 
 _rx=$(echo "$_output" | cut -f2 | numfmt --to=iec-i --suffix=B --format="%9.2f")

@@ -20,4 +20,5 @@ xrdb ~/.Xresources
 fcitx5 &
 dunst &
 picom -b -D 0
-exec i3
+pipewire &
+exec dbus-run-session i3

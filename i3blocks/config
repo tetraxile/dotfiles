@@ -2,14 +2,17 @@
 
 # Global properties
 command=$SCRIPT_DIR/$BLOCK_NAME
-separator=true
-separator_block_width=15
+separator=false
+#separator=true
+separator_block_width=0
 markup=pango
 
 [eyedropper]
 signal=4
 
 [vpn]
+label=<span foreground='#5e81ac' background='#000000' size='large'> </span><span background='#5e81ac'> <span foreground='#98e8c8'>vpn</span> </span>
+background=#5e81ac
 interval=5
 
 [wifi]
@@ -19,15 +22,23 @@ label=<span color="#ff79c6"> </span>
 instance=wlp2s0
 
 [volume]
+label=<span foreground='#88c0d0' background='#5e81ac' size='large'> </span><span background='#88c0d0'> <span foreground='#2e3440'>vol</span> </span>
+background=#88c0d0
+color=#434c5e
 interval=once
 signal=2
 
 [brightness]
+label=<span foreground='#88c0d0' background='#88c0d0' size='large'> </span><span background='#88c0d0'> </span>
 interval=once
 signal=3
 
 [battery]
+label=<span foreground='#88c0d0' background='#88c0d0' size='large'> </span><span background='#88c0d0'> </span>
 interval=2
 
 [datetime]
+label=<span foreground='#2e3440' background='#88c0d0' size='large'> </span><span background='#2e3440'> </span>
+background=#2e3440
+color=#ffffff
 interval=1

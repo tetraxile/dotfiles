@@ -9,3 +9,4 @@ export HAKKUN_FTP_IP=switch
 export HAKKUN_FTP_PORT=5000
 export HAKKUN_FTP_USER=tetra
 export HAKKUN_FTP_PASS=xyz123
+. "$HOME/.cargo/env"

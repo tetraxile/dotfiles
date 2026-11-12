@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 if [ -z $button ] ; then
 	_output=$(colorpicker -r)
@@ -8,12 +8,16 @@ if [ -z $button ] ; then
 	_hex=$(printf "#%02x%02x%02x" $_r $_g $_b)
 	# _hex=$(echo $_output | cut -d' ' -f9)
 	_y=$(( ($_r + $_r + $_b + $_g + $_g + $_g) / 6 ))
-	echo 󰈊 $_r, $_g, $_b
-	echo 󰈊 $_r, $_g, $_b
 	if (( $_y > 128 )) ; then
-		echo "#000000"
+		_fg="#000000"
 	else
-		echo "#ffffff"
+		_fg="#ffffff"
 	fi
+
+	_out="<span foreground='${_hex}' background='#000000' size='large'></span><span background='${_hex}'> <span foreground='${_fg}'>col</span></span> ${_r}, ${_g}, ${_b} <span foreground='${_hex}' background='#000000' size='large'></span>"
+	
+	echo $_out
+	echo $_out
+	echo $_fg
 	echo $_hex
 fi

@@ -32,4 +32,4 @@ alias watch-sync="watch -d grep -e Dirty: -e Writeback: /proc/meminfo"
 alias gdb-switch="gdb -ex \"set architecture aarch64\" -ex \"set gnutarget elf64-littleaarch64\" -ex \"target extended-remote switch:22225\""
 
 eval "$(starship init zsh)"
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
